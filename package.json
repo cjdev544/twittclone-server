@@ -1,0 +1,26 @@
+{
+  "name": "twiettclone-server",
+  "version": "1.0.0",
+  "description": "twittclone server with graphql",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
+  },
+  "author": "Jefferson Campos <CjDev544>",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^3.6.7",
+    "bcrypt": "^5.0.1",
+    "cloudinary": "^1.29.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "graphql": "^16.4.0",
+    "graphql-upload": "^13.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.2",
+    "nanoid": "^3.3.4",
+    "uuid": "^8.3.2",
+    "validator": "^13.7.0"
+  }
+}
