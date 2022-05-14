@@ -32,6 +32,14 @@ const typeDefs = gql`
     token: String
   }
 
+  # Types twitts ******************************************
+  type Twitt {
+    id: ID
+    userId: ID
+    message: String
+    createAt: String
+  }
+
   # *******************************************************
   # INPUTS
   # *******************************************************
@@ -69,6 +77,9 @@ const typeDefs = gql`
     getFolloweds(username: String!): [User]
     getFollowers(username: String!): [User]
     getNoFolloweds: [User]
+
+    # Twitts **********************************************
+    getUserTwitts(username: String!): [Twitt]
   }
 
   # *******************************************************
@@ -85,6 +96,9 @@ const typeDefs = gql`
     # Follow **********************************************
     followUser(username: String!): Boolean
     unFollowUser(username: String!): Boolean
+
+    # Twitts **********************************************
+    createTwitt(message: String!): Twitt
   }
 `
 

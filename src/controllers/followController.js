@@ -132,7 +132,7 @@ const followController = {
       const arrayUsers = []
       for await (const userFind of users) {
         const isNoFollowed = await Follow.findOne({ userId: user.id })
-          .where('follow')
+          .where('followId')
           .equals(userFind.id)
 
         if (!isNoFollowed) {

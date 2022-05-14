@@ -41,7 +41,7 @@ const userController = {
         }
         i++
       } while (usernameExist)
-      console.log('segundo')
+
       // Encript password
       const hashPassword = await bcrypt.hash(formatPassword, 10)
 
