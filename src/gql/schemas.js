@@ -71,6 +71,7 @@ const typeDefs = gql`
   type Query {
     # User ************************************************
     getUser(username: String, id: ID): User
+    searchUsers(search: String!): [User]
 
     # Follow **********************************************
     followNoFollow(username: String!): Boolean
@@ -80,6 +81,7 @@ const typeDefs = gql`
 
     # Twitts **********************************************
     getUserTwitts(username: String!): [Twitt]
+    getAllFollowedsTwitts: [Twitt]
   }
 
   # *******************************************************

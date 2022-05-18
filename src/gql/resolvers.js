@@ -2,7 +2,7 @@ const { GraphQLUpload } = require('graphql-upload')
 
 const userController = require('../controllers/userController')
 const followController = require('../controllers/followController')
-const twittController = require('../controllers/twittControlloer')
+const twittController = require('../controllers/twittController')
 
 const resolvers = {
   Upload: GraphQLUpload,
@@ -10,6 +10,8 @@ const resolvers = {
   Query: {
     // User ***********************************************
     getUser: (_, { username, id }) => userController.getUser(username, id),
+
+    searchUsers: (_, { search }) => userController.searchUsers(search),
 
     // Follow *********************************************
     followNoFollow: (_, { username }, ctx) =>
@@ -25,6 +27,9 @@ const resolvers = {
 
     // Twitts *********************************************
     getUserTwitts: (_, { username }) => twittController.getUserTwitts(username),
+
+    getAllFollowedsTwitts: (_, {}, ctx) =>
+      twittController.getAllFollowedsTwitts(ctx.user),
   },
 
   Mutation: {

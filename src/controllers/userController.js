@@ -193,6 +193,20 @@ const userController = {
       return err
     }
   },
+
+  /**********************************************************
+   *  Search Users
+   **********************************************************/
+  searchUsers: async (search) => {
+    try {
+      const users = await User.find({
+        name: { $regex: search, $options: 'i' },
+      })
+      return users
+    } catch (err) {
+      return err
+    }
+  },
 }
 
 module.exports = userController
