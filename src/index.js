@@ -11,7 +11,7 @@ require('dotenv').config()
 
 dbConfig()
 
-const PORT = precess.env.PORT || 4000
+const PORT = process.env.PORT || 4000
 
 const startServer = async () => {
   const server = new ApolloServer({
